@@ -24,8 +24,12 @@
   echo "Couleur : <input type='text' name='couleur'><br>";
   echo "Realisateur : <input type='text' name='realisateur'><br>";
   //echo "Image : <input type='text' name='pays'>";
-
   echo "<input type='submit' value='Ajouter'></form>";
+
+  echo "<form action='supprimer_film.php'><br>";
+  echo "<br><h4>Voulez-vous supprimer un film ?</h4>";
+  echo "Nom original du film : <input type='text' name='titreOS'><br>";
+
   ?>
 </body>
 </html>
