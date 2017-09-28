@@ -29,6 +29,7 @@
   echo "<form action='supprimer_film.php'><br>";
   echo "<br><h4>Voulez-vous supprimer un film ?</h4>";
   echo "Nom original du film : <input type='text' name='titreOS'><br>";
+  echo "<input type='submit' value='Supprimer'></form>";
 
   ?>
 </body>
