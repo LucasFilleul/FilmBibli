@@ -14,6 +14,17 @@
   // FORMULAIRE POUR AJOUTER FILM
   echo "<form action='ajouter_film.php'><br>";
   echo "<br><h4>Voulez-vous ajouter un film ?</h4>";
+
+
+  echo "Titre original : <input type='text' name='titreO'><br>";
+  echo "Titre français : <input type='text' name='titreFR'><br>";
+  echo "Pays : <input type='text' name='pays'><br>";
+  echo "Date : <input type='text' name='date'><br>";
+  echo "Duree : <input type='text' name='duree'><br>";
+  echo "Couleur : <input type='text' name='couleur'><br>";
+  echo "Realisateur : <input type='text' name='realisateur'><br>";
+  //echo "Image : <input type='text' name='pays'>";
+
   echo "<input type='submit' value='Ajouter'></form>";
   ?>
 </body>
