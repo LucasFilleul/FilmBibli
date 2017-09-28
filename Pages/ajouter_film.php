@@ -11,19 +11,20 @@
     $file_db = new PDO("sqlite:films.sqlite");
     $requete_code = $file_db->query("SELECT max(code_film) FROM films");
     $donnees = $requete_code->fetch();
+    $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
+    VALUES (:code_film,:titre_original,:titre_francais,:pays,:date, :duree,:couleur, :realisateur, :image)";
+    $stmt = $file_db->prepare($insert);
+    $stmt->bindValue(':code_film', $donnees[0] + 1);
+    $stmt->bindParam(':titre_original', $_GET["titreO"]);
+    $stmt->bindParam(':titre_francais', $_GET["titreFR"]);
+    $stmt->bindParam(':pays', $_GET["pays"]);
+    $stmt->bindParam(':date', $_GET["date"]);
+    $stmt->bindParam(':duree', $_GET["duree"]);
+    $stmt->bindParam(':couleur', $_GET["couleur"]);
+    $stmt->bindParam(':realisateur', $_GET["realisateur"]);
+    $stmt->bindValue(':image', "NB");
+    $stmt->execute();
 
-    // $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
-    // VALUES (:code_film,:titre_original,:titre_francais,:pays,:date, :duree,:couleur, :realisateur, :image)";
-    // $stmt = $file_db->prepare($insert);
-    // $stmt->bindParam(':code_film', $donnees[0] + 1);
-    // $stmt->bindParam(':titre_original', $titre_original);
-    // $stmt->bindParam(':titre_francais', $titre_francais);
-    // $stmt->bindParam(':pays', $pays);
-    // $stmt->bindParam(':date', $date);
-    // $stmt->bindParam(':duree', $duree);
-    // $stmt->bindParam(':couleur', $couleur);
-    // $stmt->bindParam(':realisateur', $realisateur);
-    // $stmt->bindParam(':image', $image);
   }
   catch(PDOException $e){
     echo $e->getMessage();
