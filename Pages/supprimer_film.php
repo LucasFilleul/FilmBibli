@@ -19,7 +19,9 @@
 
     $stmt = $file_db->prepare($delete);
     $stmt->execute();
-
+    echo "Le film à bien été supprimé !";
+    echo "<form action='accueil.php'><br>";
+    echo "<input type='submit' value='Retourner à l'accueil'></form>";
   }
   catch(PDOException $e){
     echo $e->getMessage();

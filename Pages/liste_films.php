@@ -7,6 +7,9 @@
 </head>
 <body>
   <?php
+  echo "Voulez vous retourner à l'accueil ?";
+  echo "<form action='accueil.php'><br>";
+  echo "<input type='submit' value='Accueil'></form>";
     $file_db = new PDO("sqlite:films.sqlite");
     $request = $file_db->query("SELECT * FROM films");
     foreach ($request as $c){
