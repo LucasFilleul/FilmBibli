@@ -8,8 +8,8 @@
 <body>
   <?php
   try{
-    $file_db = new PDO("sqlite:../films.sqlite");
     function ajouter_un_film(){
+      $file_db = new PDO("sqlite:../films.sqlite");
       $requete_code = $file_db->query("SELECT max(code_film) FROM films");
       $donnees = $requete_code->fetch();
       $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
@@ -35,7 +35,7 @@
         $stmt->execute();
         echo "Le film à bien été ajouté !";
         echo "<form action='../accueil.php'><br>";
-        echo "<input type='submit' value=Accueil'></form>";
+        echo "<input type='submit' value='Accueil'></form>";
       }
     }
     ajouter_un_film();

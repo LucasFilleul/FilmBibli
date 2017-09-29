@@ -8,8 +8,8 @@
 <body>
   <?php
   try{
-    $file_db = new PDO("sqlite:../films.sqlite");
     function suuprimer_un_film(){
+      $file_db = new PDO("sqlite:../films.sqlite");
       $recherche = $_GET['titreOS'];
       if($recherche == ""){
         echo "Le film n'a pas été supprimé !<br> Le nom ne doit pas etre dans notre liste.";
@@ -24,7 +24,7 @@
         $stmt->execute();
         echo "Le film à bien été supprimé !";
         echo "<form action='../accueil.php'><br>";
-        echo "<input type='submit' value='Retourner à l'accueil'></form>";
+        echo "<input type='submit' value='Accueil'></form>";
       }
     }
     suuprimer_un_film();
