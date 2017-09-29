@@ -9,11 +9,11 @@
   <?php
   try{
     $file_db = new PDO("sqlite:../films.sqlite");
-    $requete_code = $file_db->query("SELECT max(code_film) FROM films");
-    $donnees = $requete_code->fetch();
-    $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
-    VALUES (:code_film,:titre_original,:titre_francais,:pays,:date, :duree,:couleur, :realisateur, :image)";
     function ajouter_un_film(){
+      $requete_code = $file_db->query("SELECT max(code_film) FROM films");
+      $donnees = $requete_code->fetch();
+      $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
+      VALUES (:code_film,:titre_original,:titre_francais,:pays,:date, :duree,:couleur, :realisateur, :image)";
       if($_GET["titreO"] == "" || $_GET["titreFR"] == "" || $_GET["pays"] == ""
       || $_GET["date"] == "" || $_GET["duree"] == "" || $_GET["couleur"] == ""
       || $_GET["realisateur"] == ""){
