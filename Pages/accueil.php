@@ -12,8 +12,6 @@
   echo "<form action='fonctionnalités.php'><br>";
   echo "<br><h4>Voulez-vous accèder aux fonctionnalitées ?</h4>";
   echo "<input type='submit' value='Continuer'></form>";
-
-
   ?>
 </body>
 </html>
