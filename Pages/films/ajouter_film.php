@@ -2,24 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="films.css" />
+  <link rel="stylesheet" href="../CSS/films.css" />
   <title> Films </title>
 </head>
 <body>
   <?php
   try{
-    $file_db = new PDO("sqlite:films.sqlite");
+    $file_db = new PDO("sqlite:../films.sqlite");
     $requete_code = $file_db->query("SELECT max(code_film) FROM films");
     $donnees = $requete_code->fetch();
     $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
     VALUES (:code_film,:titre_original,:titre_francais,:pays,:date, :duree,:couleur, :realisateur, :image)";
     function ajouter_un_film(){
-      echo $_GET["titreFR"];
       if($_GET["titreO"] == "" || $_GET["titreFR"] == "" || $_GET["pays"] == ""
       || $_GET["date"] == "" || $_GET["duree"] == "" || $_GET["couleur"] == ""
       || $_GET["realisateur"] == ""){
         echo "Le film n'a pas été ajouté !<br> Les informations doivent etre éronées.";
-        echo "<form action='accueil.php'><br>";
+        echo "<form action='../accueil.php'><br>";
         echo "<input type='submit' value='Retour'></form>";
       }
       else{
@@ -35,7 +34,7 @@
         $stmt->bindValue(':image', "NB");
         $stmt->execute();
         echo "Le film à bien été ajouté !";
-        echo "<form action='accueil.php'><br>";
+        echo "<form action='../accueil.php'><br>";
         echo "<input type='submit' value=Accueil'></form>";
       }
     }

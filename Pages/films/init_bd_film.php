@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="films.css" />
+  <link rel="stylesheet" href="../CSS/films.css" />
   <title> Films </title>
 </head>
 <body>
   <?php
   try{
-    $file_db = new PDO('sqlite:films.sqlite');
+    $file_db = new PDO('sqlite:../films.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $file_db->exec("CREATE TABLE IF NOT EXISTS films(
       code_film INTEGER,

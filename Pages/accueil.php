@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="films.css" />
+  <link rel="stylesheet" href="../CSS/accueil.css" />
   <title> Films </title>
 </head>
 <body>
