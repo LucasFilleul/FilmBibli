@@ -9,7 +9,7 @@
   <?php
   try{
     function ajouter_un_film(){
-      $file_db = new PDO("sqlite:../BD/films.sqlite");
+      $file_db = new PDO('sqlite:../../../BD/films.sqlite');
       $requete_code = $file_db->query("SELECT max(code_film) FROM films");
       $donnees = $requete_code->fetch();
       $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
