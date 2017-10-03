@@ -13,6 +13,9 @@
     echo "<input type='radio' name='P_recherche' value='genre'>Par Genre";
     echo "<input type='radio' name='P_recherche' value='film'>Par Film";
     echo "<br><br><input type='submit' value='Valider'></form>";
+    echo "<form action='accueil.php'><br>";
+    echo "<br><h4>Retourner à l'accueil ?</h4>";
+    echo "<input type='submit' value='Accueil'></form>";
   }
   else{
     if($_GET['P_recherche'] == "acteur"){
