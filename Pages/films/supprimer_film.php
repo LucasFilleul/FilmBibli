@@ -9,7 +9,7 @@
   <?php
   try{
     function suuprimer_un_film(){
-      $file_db = new PDO("sqlite:../films.sqlite");
+      $file_db = new PDO("sqlite:../BD/films.sqlite");
       $recherche = $_GET['titreOS'];
       if($recherche == ""){
         echo "Le film n'a pas été supprimé !<br> Le nom ne doit pas etre dans notre liste.";
