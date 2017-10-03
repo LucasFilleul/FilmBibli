@@ -7,7 +7,7 @@
 <body>
   <?php
   if($_SERVER['REQUEST_METHOD'] == "GET"){
-    echo "<form action='recherche.php'><br>";
+    echo "<form method='POST' action='recherche.php'><br>";
     echo "<br><h4>Quel est le type de votre recherche ?</h4>";
     echo "<input type='radio' name='P_recherche' value='acteur'>Par Acteur";
     echo "<input type='radio' name='P_recherche' value='genre'>Par Genre";
@@ -18,14 +18,14 @@
     echo "<input type='submit' value='Accueil'></form>";
   }
   else{
-    if($_GET['P_recherche'] == "acteur"){
-      echo "ACTEUR FDP";
+    if($_POST['P_recherche'] == "acteur"){
+      echo "ACTEUR ";
     }
-    elseif($_GET['P_recherche'] == "genre"){
-      echo "GENRE FDP";
+    elseif($_POST['P_recherche'] == "genre"){
+      echo "GENRE ";
     }
-    elseif($_GET['P_recherche'] == "film"){
-      echo "FILM FDP";
+    elseif($_POST['P_recherche'] == "film"){
+      echo "FILM ";
     }
   }
   phpinfo(INFO_VARIABLES);
