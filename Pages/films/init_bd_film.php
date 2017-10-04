@@ -8,7 +8,7 @@
 <body>
   <?php
   try{
-    $file_db = new PDO('sqlite:../../../BD/films.sqlite');
+    $file_db = new PDO('sqlite:../../../BD/base_de_donnes_FILM.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $file_db->exec("CREATE TABLE IF NOT EXISTS films(
       code_film INTEGER,

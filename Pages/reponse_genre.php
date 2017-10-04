@@ -8,18 +8,17 @@
 <body>
   <?php
     // RESSORT L ID DU GENRE
-    $file_db = new PDO("sqlite:../../BD/genres.sqlite");
+    $file_db = new PDO("sqlite:../../BD/base_de_donnes_FILM.sqlite");
     $nom_recherche = $_GET['nom_recherche'];
     $request = $file_db->query("SELECT * FROM genres WHERE nom_genre='$nom_recherche'");
     $donnees = $request->fetch();
     $idgenre = $donnees[0];
 
     // RESSORT LA LISTE DES FILMS DU GENRE
-    $file_db2 = new PDO("sqlite:../../BD/R_Film_Genre.sqlite");
+    $file_db2 = new PDO("sqlite:../../BD/base_de_donnes_FILM.sqlite");
     $request_liste_films = $file_db2->query("SELECT ref_code_film FROM FILMESTDEGENRE WHERE ref_code_genre='$idgenre'");
-    $liste_films = $request_liste_films->fetch();
-    foreach ($liste_films as $film) {
-      echo $film;
+    foreach ($request_liste_films as $film) {
+     print $film[0] . "<br>";
     }
 
     //echo "Voulez vous retourner à l'accueil ?";

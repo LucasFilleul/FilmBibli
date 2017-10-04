@@ -10,7 +10,7 @@
   echo "Voulez vous retourner à l'accueil ?";
   echo "<form action='../accueil.php'><br>";
   echo "<input type='submit' value='Accueil'></form>";
-    $file_db = new PDO("sqlite:../../../BD/genres.sqlite");
+    $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT * FROM genres");
     foreach ($request as $c){
       echo "($c[0], $c[1])<br>";

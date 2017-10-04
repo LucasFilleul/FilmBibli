@@ -7,7 +7,7 @@
 </head>
 <body>
   <?php
-    $file_db = new PDO("sqlite:../../BD/films.sqlite");
+    $file_db = new PDO("sqlite:../../BD/base_de_donnes_FILM.sqlite");
     $nom_recherche = $_GET['nom_recherche'];
     $request = $file_db->query("SELECT * FROM films WHERE titre_original='$nom_recherche'");
     $donnees = $request->fetch();
