@@ -6,17 +6,13 @@
   <title> Films </title>
 </head>
 <body>
-  <?php
-  // FORMULAIRE POUR AFFICHER FONCTIONNALITES DES FILM
-  echo "<form action='fonctionnalités.php'><br>";
-  echo "<br><h4>Voulez-vous accèder aux fonctionnalitées ?</h4>";
-  echo "<input type='submit' value='Continuer'></form>";
+   <form action='fonctionnalités.php'><br>
+   <br><h4>Voulez-vous accèder aux fonctionnalitées ?</h4>
+   <input type='submit' value='Continuer'></form>
 
 
-  // FORMULAIRE POUR AFFICHER FONCTIONNALITES DE RECHERCHE
-  echo "<form action='recherche.php'><br>";
-  echo "<br><h4>Voulez-vous accèder aux recherches ?</h4>";
-  echo "<input type='submit' value='Continuer'></form>";
-  ?>
+   <form action='recherche.php'><br>
+   <br><h4>Voulez-vous accèder aux recherches ?</h4>
+   <input type='submit' value='Continuer'></form>
 </body>
 </html>
