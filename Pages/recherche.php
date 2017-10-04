@@ -19,16 +19,21 @@
   }
   else{
     if($_POST['P_recherche'] == "acteur"){
-      echo "ACTEUR ";
+      echo "<form action='reponse_acteur.php'><br>";
+      echo "Nom Acteur : <input type='text' name='nom_recherche'><br>";
+      echo "<input type='submit' value='Rechercher'></form>";
     }
     elseif($_POST['P_recherche'] == "genre"){
-      echo "GENRE ";
+      echo "<form action='reponse_genre.php'><br>";
+      echo "Nom Genre : <input type='text' name='nom_recherche'><br>";
+      echo "<input type='submit' value='Rechercher'></form>";
     }
     elseif($_POST['P_recherche'] == "film"){
-      echo "FILM ";
+      echo "<form action='reponse_film.php'><br>";
+      echo "Nom Film : <input type='text' name='nom_recherche'><br>";
+      echo "<input type='submit' value='Rechercher'></form>";
     }
   }
-  phpinfo(INFO_VARIABLES);
   ?>
 </body>
 </html>
