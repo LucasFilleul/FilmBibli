@@ -11,7 +11,7 @@
    <input type='submit' value='Continuer'></form>
 
 
-   <form action='recherche.php'><br>
+   <form action='../Recherche/recherche.php'><br>
    <br><h4>Voulez-vous accèder aux recherches ?</h4>
    <input type='submit' value='Continuer'></form>
 </body>

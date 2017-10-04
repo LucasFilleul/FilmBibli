@@ -13,7 +13,7 @@
       $recherche = $_GET['titreOS'];
       if($recherche == ""){
         echo "Le film n'a pas été supprimé !<br> Le nom ne doit pas etre dans notre liste.";
-        echo "<form action='../accueil.php'><br>";
+        echo "<form action='../HTML/accueil.php'><br>";
         echo "<input type='submit' value='Retour'></form>";
       }
       else{
@@ -23,7 +23,7 @@
         $stmt = $file_db->prepare($delete);
         $stmt->execute();
         echo "Le film à bien été supprimé !";
-        echo "<form action='../accueil.php'><br>";
+        echo "<form action='../HTML/accueil.php'><br>";
         echo "<input type='submit' value='Accueil'></form>";
       }
     }

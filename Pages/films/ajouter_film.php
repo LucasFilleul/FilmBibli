@@ -18,7 +18,7 @@
       || $_GET["date"] == "" || $_GET["duree"] == "" || $_GET["couleur"] == ""
       || $_GET["realisateur"] == ""){
         echo "Le film n'a pas été ajouté !<br> Les informations doivent etre éronées.";
-        echo "<form action='../accueil.php'><br>";
+        echo "<form action='../HTML/accueil.php'><br>";
         echo "<input type='submit' value='Retour'></form>";
       }
       else{
@@ -34,7 +34,7 @@
         $stmt->bindValue(':image', "NB");
         $stmt->execute();
         echo "Le film à bien été ajouté !";
-        echo "<form action='../accueil.php'><br>";
+        echo "<form action='../HTML/accueil.php'><br>";
         echo "<input type='submit' value='Accueil'></form>";
       }
     }
