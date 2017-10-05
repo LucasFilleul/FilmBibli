@@ -11,10 +11,10 @@
 </header>
   <nav>
     <ul id="menu-bar">
-        <a href="projet_accueil.html"><li class="active"><p>Accueil</p></li></a>
+        <a href="../HTML/accueil.php"><li class="active"><p>Accueil</p></li></a>
         <a href="../films/liste_films.php"><li><p>Films</p></li></a>
-        <a href="../films/liste_films.php"><li><p>Acteurs</p></li></a>
-        <a href="fonctionnalités.php"><li><p>Genres</p></li></a>
+        <a href="../acteur/liste_acteurs.php"><li><p>Acteurs</p></li></a>
+        <a href="../genres/liste_genres.php"><li><p>Genres</p></li></a>
         <a href="../Recherche/recherche.php"><li><p>Recherche</p></li></a>
     </ul>
 </nav>

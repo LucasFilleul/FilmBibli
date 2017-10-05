@@ -1798,6 +1798,7 @@
       $stmt->execute();
     }
     $file_db = null;
+    echo "BD initialisée";
   }
   catch(PDOException $e){
     echo $e->getMessage();

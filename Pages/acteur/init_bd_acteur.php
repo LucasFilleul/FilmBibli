@@ -921,6 +921,7 @@ array(660,'Newman','Paul','américaine', 1925, 2008)
       $stmt->execute();
     }
     $file_db = null;
+    echo "BD initialisée";
   }
   catch(PDOException $e){
     echo $e->getMessage();

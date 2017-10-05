@@ -2,20 +2,28 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="../CSS/films.css" />
-  <title> Films </title>
+  <link rel="stylesheet" href="../CSS/accueil.css" />
+  <title> Filleul and Co </title>
 </head>
 <body>
+<header>
+  <img id ='header' src = '../images/bobine.jpg' style = 'width:50%'>
+</header>
+  <nav>
+    <ul id="menu-bar">
+      <a href="../HTML/accueil.php"><li><p>Accueil</p></li></a>
+        <a href="../films/liste_films.php"><li><p>Films</p></li></a>
+        <a href="../acteur/liste_acteurs.php"><li><p>Acteurs</p></li></a>
+        <a href="../genres/liste_genres.php"><li><p>Genres</p></li></a>
+        <a href="../Recherche/recherche.php"><li class="active"><p>Recherche</p></li></a>
+    </ul>
+</nav>
   <?php
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $nom_recherche = $_GET['nom_recherche'];
     $request = $file_db->query("SELECT * FROM films WHERE titre_original='$nom_recherche'");
     $donnees = $request->fetch();
     echo "($donnees[0], $donnees[1], $donnees[2], $donnees[3], $donnees[4], $donnees[5], $donnees[6], $donnees[7], $donnees[8])<br>";
-    echo "Voulez vous retourner à l'accueil ?";
-    echo "<form action='../HTML/accueil.php'><br>";
-    echo "<input type='submit' value='Accueil'></form>";
-
   ?>
 </body>
 </html>

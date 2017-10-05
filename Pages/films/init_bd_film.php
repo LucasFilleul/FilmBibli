@@ -605,6 +605,7 @@
       $stmt->execute();
     }
     $file_db = null;
+    echo "BD initialisée";
     // foreach($films as $f){
     //   echo $f;
     // }

@@ -11,6 +11,7 @@ a{
   color: black;
   text-decoration-line: none;
 }
+
 nav ul{
   background: url('../images/nav.png');
   border-radius: 0.5em;
@@ -56,4 +57,26 @@ nav a:focus{
 nav a:active{
   background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.1));
   box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
+}
+ul{
+  list-style: None;
+}
+#liste{
+  display: flex;
+  flex-wrap: wrap;
+}
+#liste > a{
+  flex: 1 1 27%;
+  text-align: center;
+  background-color: lightgrey;
+  border: solid;
+  border-radius: 1em;
+  margin: 1.5em;
+  width: 27%;
+}
+#liste > a:hover{
+  background-color: rgba(0,0,0, .6);
+}
+#liste > a:hover h2{
+  color: white;
 }
