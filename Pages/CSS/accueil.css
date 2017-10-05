@@ -7,5 +7,53 @@
 html{
   background-color: RGB(192,192,192);
 }
+a{
+  color: black;
+  text-decoration-line: none;
+}
+nav ul{
+  background: url('../images/nav.png');
+  border-radius: 0.5em;
+  display: table;
+  width: 100%;
+  padding: 0;
+  background-color: #89165B;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3),
+              0 3px 5px rgba(0, 0, 0, .2),
+              0 5px 10px rgba(0, 0, 0, .2),
+              0 20px 20px rgba(0, 0, 0, .15);
+}
+nav li{
+  display: table-cell;
+  padding: 5vw;
+  padding-bottom: 1.8em;
+  padding-top: 1.8em;
+  color: rgba(0,0,0, .6);
+}
 
+li p{
+  color: black;
+  background-color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+nav a{
+  display: table-cell;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 8px 8px 17px 8px;
+  transition: all .3s;
+  font-family: cursive;
+  font-style: inherit;
+}
+nav a:hover,
+nav a:focus{
+  background: rgba(0,0,0, .6);
 
+}
+
+nav a:active{
+  background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.1));
+  box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
+}

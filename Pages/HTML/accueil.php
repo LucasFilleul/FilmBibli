@@ -5,17 +5,18 @@
   <link rel="stylesheet" href="../CSS/accueil.css" />
   <title> Filleul and Co </title>
 </head>
+<body>
 <header>
   <img id ='header' src = '../images/bobine.jpg' style = 'width:50%'>
 </header>
-<body>
-   <form action='fonctionnalités.php'><br>
-   <br><h4>Voulez-vous accèder aux fonctionnalitées ?</h4>
-   <input type='submit' value='Continuer'></form>
-
-
-   <form action='../Recherche/recherche.php'><br>
-   <br><h4>Voulez-vous accèder aux recherches ?</h4>
-   <input type='submit' value='Continuer'></form>
+  <nav>
+    <ul id="menu-bar">
+        <a href="projet_accueil.html"><li class="active"><p>Accueil</p></li></a>
+        <a href="../films/liste_films.php"><li><p>Films</p></li></a>
+        <a href="../films/liste_films.php"><li><p>Acteurs</p></li></a>
+        <a href="fonctionnalités.php"><li><p>Genres</p></li></a>
+        <a href="../Recherche/recherche.php"><li><p>Recherche</p></li></a>
+    </ul>
+</nav>
 </body>
 </html>
