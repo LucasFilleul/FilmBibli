@@ -6,14 +6,16 @@
   <title> Filleul and Co </title>
 </head>
 <body>
-<header>
-  <img id ='header' src = '../images/bobine.jpg' style = 'width:30%'>
-</header>
+  <header>
+    <h1 id='centerdroite'>Filleul</h1>
+    <img id ='header' src = '../images/bobine.jpg' style = 'width:50%'>
+    <h1 id='centergauche'>Fauvin</h1>
+  </header>
   <nav>
     <ul id="menu-bar">
         <a href="../HTML/accueil.php"><li><p>Accueil</p></li></a>
         <a href="../films/liste_films.php"><li><p>Films</p></li></a>
-        <a href="../acteur/liste_acteurs.php"><li class="active"><p>Acteurs</p></li></a>
+        <a href="../acteur/liste_acteurs.php"  class="active"><li><p>Acteurs</p></li></a>
         <a href="../genres/liste_genres.php"><li><p>Genres</p></li></a>
         <a href="../Recherche/recherche.php"><li><p>Recherche</p></li></a>
     </ul>
@@ -25,5 +27,6 @@
       echo "($c[0], $c[1], $c[2], $c[3], $c[4], $c[5])<br>";
     }
   ?>
+  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>

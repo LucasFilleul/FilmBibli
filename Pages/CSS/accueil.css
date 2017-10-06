@@ -3,15 +3,18 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+header{
+  background-color: RGB(192,192,192);
+  display: flex;
+}
 html{
   background-color: RGB(192,192,192);
+  /*background-color: rgba(0,0,0, .6);*/
 }
 a{
   color: black;
   text-decoration-line: none;
 }
-
 nav ul{
   background: url('../images/nav.png');
   border-radius: 0.5em;
@@ -54,10 +57,6 @@ nav a:focus{
 
 }
 
-nav a:active{
-  background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.1));
-  box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
-}
 ul{
   list-style: None;
 }
@@ -79,4 +78,26 @@ ul{
 }
 #liste > a:hover h2{
   color: white;
+}
+.active{
+  background-color: rgba(0,0,0, .2);
+}
+body{
+  background-color: rgba(0,0,0, .6);
+  margin: 0;
+}
+footer {
+  background-color: RGB(192,192,192);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#centerdroite{
+  padding-top: 3em;
+  padding-left: 3em;
+}
+#centergauche{
+  padding-top: 3em;
+  padding-right: 3em;
 }

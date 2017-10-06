@@ -6,16 +6,18 @@
   <title> Filleul and Co </title>
 </head>
 <body>
-<header>
-  <img id ='header' src = '../images/bobine.jpg' style = 'width:50%'>
-</header>
+  <header>
+    <h1 id='centerdroite'>Filleul</h1>
+    <img id ='header' src = '../images/bobine.jpg' style = 'width:50%'>
+    <h1 id='centergauche'>Fauvin</h1>
+  </header>
   <nav>
     <ul id="menu-bar">
       <a href="../HTML/accueil.php"><li><p>Accueil</p></li></a>
         <a href="../films/liste_films.php"><li><p>Films</p></li></a>
         <a href="../acteur/liste_acteurs.php"><li><p>Acteurs</p></li></a>
         <a href="../genres/liste_genres.php"><li><p>Genres</p></li></a>
-        <a href="../Recherche/recherche.php"><li class="active"><p>Recherche</p></li></a>
+        <a href="../Recherche/recherche.php" class="active"><li><p>Recherche</p></li></a>
     </ul>
 </nav>
   <?php
@@ -43,5 +45,6 @@
       }
     }
   ?>
+  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>
