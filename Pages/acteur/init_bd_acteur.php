@@ -102,7 +102,65 @@
       array(36,'Banderas','Antonio','Espagnol', 1960, 0, 'Antonio_Banderas.jpg'),
       array(37,'Zeta-Jones','Catherine','Britannique', 1969, 0, 'Catherine_Zeta-Jones.jpg'),
 
+      // Omar m'a tuer
 
+      array(38,'Bouajila','Sami','Français', 1966, 0, 'Sami_Bouajila.jpg'),
+      array(39,'Podalydès','Denis','Français', 1963, 0, 'Denis_Podalydès.jpg'),
+
+      // Un havre de paix
+
+      array(40,'Hough','Julianne','Americaine', 1988, 0, 'Julianne_Hough.jpg'),
+      array(41,'Duhamel','Josh','Americain', 1972, 0, 'Josh_Duhamel.jpg'),
+
+      // Indigènes
+
+      array(42,'Debbouze','Jamel','Français/Marocain', 1975, 0, 'Jamel_Debbouze.jpg'),
+      array(43,'Naceri','Sami','Français', 1961, 0, 'Sami_Naceri.jpg'),
+
+      // Percy Jackson : Le Voleur de foudre
+
+      array(44,'Lerman','Logan','Americain', 1992, 0, 'Lerman_Logan.jpg'),
+      array(45,'T.Jackson','Brandon','Americain', 1984, 0, 'Brandon_T.Jackson.jpg'),
+      array(46,'Brosnan','Pierce','Irlandais', 1953, 0, 'Brandon_T.Jackson.jpg'),
+
+      // Les Aventuriers de l'arche perdue
+
+      array(47,'Ford','Harrison','Americain', 1942, 0, 'Harrison_Ford.jpg'),
+      array(48,'Allen','Karen','Americaine', 1951, 0, 'Karen_Allen.jpg'),
+
+      // Gone Girl
+
+      array(49,'Affleck','Ben','Americain', 1972, 0, 'Ben_Affleck.jpg'),
+      array(50,'Pike','Rosamund','Britannique', 1979, 0, 'Rosamunde_Pike.jpg'),
+
+      // Avatar
+
+      array(51,'Worthington','Sam','Australien', 1976, 0, 'Sam_Worthington.jpg'),
+      array(52,'Saldana','Zoe','Americaine', 1978, 0, 'Zoe_Saldana.jpg'),
+
+      // Star Wars, épisode IV : Un nouvel espoir
+
+      array(53,'Hamill','Mark','Americain', 1951, 0, 'Mark_Hamill.jpg'),
+      array(54,'Fisher','Carrie','Americaine', 1956, 2016, 'Carrie_Fisher.jpg'),
+
+      // La Mouche
+
+      array(55,'Goldblum','Jeff','Americain', 1952, 0, 'Jeff_Goldblum.jpg'),
+      array(56,'Devis','Geena','Americaine', 1956, 0, 'Geena_Devis.jpg'),
+
+      // Baise moi
+
+      array(57,'Anderson','Raffaela','Française', 1976, 0, 'Raffaela_Anderson.jpg'),
+      array(58,'Bach','Karen','Française', 1973, 2005, 'Karen_Bach.jpg'),
+
+      // Sucker Punch
+
+      array(59,'Browning','Emily','Australienne', 1988, 0, 'Emily_Browning.jpg'),
+      array(60,'Cornish','Abbie','Australienne', 1982, 0, 'Abbie_Cornish.jpg'),
+
+      // Rox et Rouky
+
+      array(61,'Emanuele','Paule','Française ', 1927, 0, 'Paule_Emanuele.jpg'),
 
 
       );
