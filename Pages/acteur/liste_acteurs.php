@@ -22,10 +22,12 @@
 </nav>
   <?php
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
-    $request = $file_db->query("SELECT * FROM acteurs");
+    $request = $file_db->query("SELECT * FROM acteurs ORDER BY nom");
+    echo "<ul id='liste'><br>";
     foreach ($request as $c){
-      echo "($c[0], $c[1], $c[2], $c[3], $c[4], $c[5])<br>";
+      echo "<a href='../Recherche/reponse_acteur.php?nom_recherche=$c[1]' ><li><br><br><h2>$c[2] $c[1]</h2><br><br><br></li></a><br>";
     }
+      echo "</ul><br>";
   ?>
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>

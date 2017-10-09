@@ -24,7 +24,7 @@
     // RESSORT L ID DU GENRE
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $nom_recherche = $_GET['nom_recherche'];
-    $request = $file_db->query("SELECT * FROM genres WHERE nom_genre='$nom_recherche'");
+    $request = $file_db->query("SELECT * FROM genres WHERE img='$nom_recherche'");
     $donnees = $request->fetch();
     $idgenre = $donnees[0];
     if($idgenre == ""){
