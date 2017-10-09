@@ -23,23 +23,23 @@
       // }
 
     $genres = array(
-      array(1,'Comédie', 'comedie'),
-     array(2,'Drame', 'drame'),
-     array(3,'Romance', 'romance'),
-     array(4,'Action', 'action'),
-     array(5,'Historique', 'historique'),
-     array(6,'Mythologie / Antiquité', 'peplum'),
-     array(7,'Cape et Epée', 'capetepee'),
-     array(8,'Western', 'western'),
-     array(9,'Aventure', 'aventure'),
-     array(10,'Thriller', 'thriller'),
-     array(11,'Fantastique', 'fantastique'),
-     array(12,'Science-Fiction', 'scifie'),
-     array(13,'Horreur', 'horreur'),
-     array(14,'Catastrophe', 'catastrophe'),
-     array(15,'Erotique', 'erotique'),
-     array(16,'Fantaisie', 'fantaisie'),
-     array(17,'Dessin annimées', 'anime')
+      array(1,'Comédie', 'comedie'), // Done
+     array(2,'Drame', 'drame'), // Done
+     array(3,'Romance', 'romance'), // Done
+     array(4,'Action', 'action'),// Done
+     array(5,'Historique', 'historique'),// Done
+     array(6,'Mythologie / Antiquité', 'peplum'),// Done
+     array(7,'Cape et Epée', 'capetepee'),// Done
+     array(8,'Western', 'western'), // Done
+     array(9,'Aventure', 'aventure'),// Done
+     array(10,'Thriller', 'thriller'),// Done
+     array(11,'Fantastique', 'fantastique'),// Done
+     array(12,'Science-Fiction', 'scifie'),// Done
+     array(13,'Horreur', 'horreur'),// Done
+     array(14,'Catastrophe', 'catastrophe'), // Done
+     array(15,'Erotique', 'erotique'),// Done
+     array(16,'Fantaisie', 'fantaisie'),// Done
+     array(17,'Dessin annimées', 'anime')// Done
       );
 
     $insert = "INSERT INTO genres (code_genre, nom_genre,img)
