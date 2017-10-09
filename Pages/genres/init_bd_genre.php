@@ -37,7 +37,7 @@
      array(12,'Science-Fiction', 'scifie'),
      array(13,'Horreur', 'horreur'),
      array(14,'Catastrophe', 'catastrophe'),
-     array(15,'Erotique', 'Erotique'),
+     array(15,'Erotique', 'erotique'),
      array(16,'Fantaisie', 'fantaisie'),
      array(17,'Dessin annimées', 'anime')
       );
