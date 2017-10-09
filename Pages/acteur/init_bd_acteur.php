@@ -125,8 +125,42 @@
 
       // Les Aventuriers de l'arche perdue
 
-      array(44,'Lerman','Logan','Americain', 1992, 0, 'Lerman_Logan.jpg'),
+      array(47,'Ford','Harrison','Americain', 1942, 0, 'Harrison_Ford.jpg'),
+      array(48,'Allen','Karen','Americaine', 1951, 0, 'Karen_Allen.jpg'),
 
+      // Gone Girl
+
+      array(49,'Affleck','Ben','Americain', 1972, 0, 'Ben_Affleck.jpg'),
+      array(50,'Pike','Rosamund','Britannique', 1979, 0, 'Rosamunde_Pike.jpg'),
+
+      // Avatar
+
+      array(51,'Worthington','Sam','Australien', 1976, 0, 'Sam_Worthington.jpg'),
+      array(52,'Saldana','Zoe','Americaine', 1978, 0, 'Zoe_Saldana.jpg'),
+
+      // Star Wars, épisode IV : Un nouvel espoir
+
+      array(53,'Hamill','Mark','Americain', 1951, 0, 'Mark_Hamill.jpg'),
+      array(54,'Fisher','Carrie','Americaine', 1956, 2016, 'Carrie_Fisher.jpg'),
+
+      // La Mouche
+
+      array(55,'Goldblum','Jeff','Americain', 1952, 0, 'Jeff_Goldblum.jpg'),
+      array(56,'Devis','Geena','Americaine', 1956, 0, 'Geena_Devis.jpg'),
+
+      // Baise moi
+
+      array(57,'Anderson','Raffaela','Française', 1976, 0, 'Raffaela_Anderson.jpg'),
+      array(58,'Bach','Karen','Française', 1973, 2005, 'Karen_Bach.jpg'),
+
+      // Sucker Punch
+
+      array(59,'Browning','Emily','Australienne', 1988, 0, 'Emily_Browning.jpg'),
+      array(60,'Cornish','Abbie','Australienne', 1982, 0, 'Abbie_Cornish.jpg'),
+
+      // Rox et Rouky
+
+      array(61,'Emanuele','Paule','Française ', 1927, 0, 'Paule_Emanuele.jpg'),
 
 
       );
