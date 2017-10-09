@@ -38,7 +38,8 @@
      array(13,'Horreur', 'horreur'),
      array(14,'Catastrophe', 'catastrophe'),
      array(15,'Erotique', 'Erotique'),
-     array(16,'Fantaisie', 'fantaisie')
+     array(16,'Fantaisie', 'fantaisie'),
+     array(17,'Dessin annimées', 'anime')
       );
 
     $insert = "INSERT INTO genres (code_genre, nom_genre,img)
