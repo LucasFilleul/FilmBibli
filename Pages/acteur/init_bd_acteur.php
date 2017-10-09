@@ -102,6 +102,30 @@
       array(36,'Banderas','Antonio','Espagnol', 1960, 0, 'Antonio_Banderas.jpg'),
       array(37,'Zeta-Jones','Catherine','Britannique', 1969, 0, 'Catherine_Zeta-Jones.jpg'),
 
+      // Omar m'a tuer
+
+      array(38,'Bouajila','Sami','Français', 1966, 0, 'Sami_Bouajila.jpg'),
+      array(39,'Podalydès','Denis','Français', 1963, 0, 'Denis_Podalydès.jpg'),
+
+      // Un havre de paix
+
+      array(40,'Hough','Julianne','Americaine', 1988, 0, 'Julianne_Hough.jpg'),
+      array(41,'Duhamel','Josh','Americain', 1972, 0, 'Josh_Duhamel.jpg'),
+
+      // Indigènes
+
+      array(42,'Debbouze','Jamel','Français/Marocain', 1975, 0, 'Jamel_Debbouze.jpg'),
+      array(43,'Naceri','Sami','Français', 1961, 0, 'Sami_Naceri.jpg'),
+
+      // Percy Jackson : Le Voleur de foudre
+
+      array(44,'Lerman','Logan','Americain', 1992, 0, 'Lerman_Logan.jpg'),
+      array(45,'T.Jackson','Brandon','Americain', 1984, 0, 'Brandon_T.Jackson.jpg'),
+      array(46,'Brosnan','Pierce','Irlandais', 1953, 0, 'Brandon_T.Jackson.jpg'),
+
+      // Les Aventuriers de l'arche perdue
+
+      array(44,'Lerman','Logan','Americain', 1992, 0, 'Lerman_Logan.jpg'),
 
 
 
