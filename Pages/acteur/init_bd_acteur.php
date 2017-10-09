@@ -82,7 +82,7 @@
       // Kill Bill
 
       array(27,'Thurman','Uma','Americaine', 1970, 0, 'Uma_Thurman.jpg'),
-      array(28,'Chiba','Sonny','Japonais', 1939 0, 'Sonny_Chiba.jpg'),
+      array(28,'Chiba','Sonny','Japonais', 1939 ,0, 'Sonny_Chiba.jpg'),
 
       // 2012
 
@@ -101,6 +101,7 @@
       array(35,'Hopkins','Anthony','Britannique', 1937, 0, 'Anthony_Hopkins.jpg'),
       array(36,'Banderas','Antonio','Espagnol', 1960, 0, 'Antonio_Banderas.jpg'),
       array(37,'Zeta-Jones','Catherine','Britannique', 1969, 0, 'Catherine_Zeta-Jones.jpg'),
+
 
 
 
