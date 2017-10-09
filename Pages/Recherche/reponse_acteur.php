@@ -40,7 +40,7 @@
       $request_films = $file_db->query("SELECT * FROM films WHERE code_film ='$idfilm[0]'");
         foreach ($request_films as $film)
         {
-          print $film[0] . ", " . $film[1] . ", " .$film[2] . ", " .$film[3] . ", " .$film[4] . ", " .$film[5] . ", " .$film[6] . ", " .$film[7] . ", " . $film[8] . "<br>";
+          print $film[0] . ", " . $film[1] . ", " .$film[2] . ", " .$film[3] . ", " .$film[4] . ", " .$film[5] . ", " .$film[6] . ", " .$film[7] . "<br>";
         }
       }
     }
