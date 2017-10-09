@@ -75,14 +75,14 @@
       array(20, 51),
       array(20, 52),
       array(21, 53),
-      array(22, 54),
-      array(23, 55),
-      array(23, 56),
-      array(24, 57),
-      array(24, 58),
-      array(25, 59),
-      array(25, 60),
-      array(26, 61),
+      array(21, 54),
+      array(22, 55),
+      array(22, 56),
+      array(23, 57),
+      array(23, 58),
+      array(24, 59),
+      array(24, 60),
+      array(25, 61),
       );
 
     $insert = "INSERT INTO ACTEURDANSFILM (ref_code_film,ref_code_acteur)
