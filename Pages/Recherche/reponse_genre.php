@@ -24,7 +24,7 @@
     // RESSORT L ID DU GENRE
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $nom_recherche = $_GET['nom_recherche'];
-    $request = $file_db->query("SELECT * FROM genres WHERE img='$nom_recherche'");
+    $request = $file_db->query("SELECT * FROM genres WHERE nom_genre='$nom_recherche'");
     $donnees = $request->fetch();
     $idgenre = $donnees[0];
     if($idgenre == ""){
@@ -35,14 +35,18 @@
       // RESSORT LA LISTE DES ID DES FILMS DU GENRE.
       $request_liste_films = $file_db->query("SELECT ref_code_film FROM FILMESTDEGENRE WHERE ref_code_genre='$idgenre'");
       // RESSORT LE FILM
+      echo "<ul id='liste'><br>";
       foreach ($request_liste_films as $idfilm)
       {
       $request_films = $file_db->query("SELECT * FROM films WHERE code_film ='$idfilm[0]'");
-        foreach ($request_films as $film)
-        {
-          print $film[0] . ", " . $film[1] . ", " .$film[2] . ", " .$film[3] . ", " .$film[4] . ", " .$film[5] . ", " .$film[6] . ", " . $film[7] . "<br>";
-        }
+      foreach ($request_films as $c){
+        $heure = substr($c[4], -3, 1);
+        $minute = substr($c[4], -2);
+        echo "<li><br><br><h2>$c[1]</h2><br><img src = '../images/films/$c[7]' style = 'width:50%'><br><br>
+        <p>Réalisateur : $c[6]</p><p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li><br>";
       }
+      }
+      echo "</ul><br>";
     }
   ?>
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>

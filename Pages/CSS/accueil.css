@@ -5,9 +5,10 @@
 }
 header{
   display: flex;
+  background-color: #AEAEAE;
 }
 html{
-  background-color: RGB(231,127,127);
+  background-color: #403075;
 }
 a{
   color: black;
@@ -50,7 +51,7 @@ nav a{
 }
 nav a:hover,
 nav a:focus{
-  background: rgba(0,0,255, .6);
+  background:  rgba(14, 0, 60, 0.6);
 
 }
 
@@ -64,20 +65,29 @@ ul{
 #liste > a{
   flex: 1 1 27%;
   text-align: center;
-  background-color: lightblue;
+  background-color: #AEAEAE;
+  border: solid;
+  border-radius: 1em;
+  margin: 1.5em;
+  width: 27%;
+}
+#liste > li{
+  flex: 1 1 27%;
+  text-align: center;
+  background-color: #AEAEAE;
   border: solid;
   border-radius: 1em;
   margin: 1.5em;
   width: 27%;
 }
 #liste > a:hover{
-  background-color: rgba(0,0,255, .6);
+  background-color: rgba(29, 10, 89, 0.6);
 }
 #liste > a:hover h2{
   color: white;
 }
 .active{
-  background-color: rgba(0,0,155, .4);
+  background-color: rgba(14, 0, 60, 0.6);
 }
 body{
   margin: 0;
@@ -87,6 +97,13 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+}
+#fixefooter{
+  background-color: RGB(192,192,192);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
 }
 #centerdroite{
   padding-top: 3em;

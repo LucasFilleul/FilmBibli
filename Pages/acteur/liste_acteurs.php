@@ -21,11 +21,17 @@
     </ul>
 </nav>
   <?php
+    echo "<fieldset>";
+    echo "<h2>Recherche :<h2>";
+    echo "<form action='../Recherche/reponse_acteur.php'><br>";
+    echo "Nom Acteur : <input type='text' name='nom_recherche'><br>";
+    echo "<input type='submit' value='Rechercher'></form>";
+    echo "</fieldset>";
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT * FROM acteurs ORDER BY nom");
     echo "<ul id='liste'><br>";
     foreach ($request as $c){
-      echo "<a href='../Recherche/reponse_acteur.php?nom_recherche=$c[1]' ><li><br><br><h2>$c[2] $c[1]</h2><br><br><br></li></a><br>";
+      echo "<a href='../Recherche/reponse_acteur.php?nom_recherche=$c[1]' ><li><br><br><h2>$c[2] $c[1]</h2><br><img src = '../images/acteurs/$c[6]' style = 'width:50%'><br><br></li></a><br>";
     }
       echo "</ul><br>";
   ?>

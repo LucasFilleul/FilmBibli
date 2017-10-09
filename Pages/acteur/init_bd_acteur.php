@@ -16,7 +16,8 @@
       prenom TEXT,
       nationalite TEXT,
       date_naiss INTEGER,
-      date_mort INTEGER)");
+      date_mort INTEGER,
+      image TEXT)");
 
       // $lines = file('act.txt');
       // foreach ($lines as $lineContent)
@@ -165,8 +166,8 @@
 
       );
 
-    $insert = "INSERT INTO acteurs (code_indiv, nom, prenom, nationalite, date_naiss, date_mort)
-    VALUES (:code_indiv,:nom,:prenom,:nationalite,:date_naiss, :date_mort)";
+    $insert = "INSERT INTO acteurs (code_indiv, nom, prenom, nationalite, date_naiss, date_mort,image)
+    VALUES (:code_indiv,:nom,:prenom,:nationalite,:date_naiss, :date_mort, :image)";
     $stmt = $file_db->prepare($insert);
     $stmt->bindParam(':code_indiv', $code_indiv);
     $stmt->bindParam(':nom', $nom);
@@ -174,6 +175,7 @@
     $stmt->bindParam(':nationalite', $nationalite);
     $stmt->bindParam(':date_naiss', $date_naiss);
     $stmt->bindParam(':date_mort', $date_mort);
+    $stmt->bindParam(':image', $image);
 
     foreach($acteurs as $f){
       $code_indiv = $f[0];
@@ -182,6 +184,7 @@
       $nationalite = $f[3];
       $date_naiss = $f[4];
       $date_mort = $f[5];
+      $image = $f[6];
       $stmt->execute();
     }
     $file_db = null;

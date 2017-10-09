@@ -21,6 +21,12 @@
     </ul>
 </nav>
   <?php
+  echo "<fieldset>";
+  echo "<h2>Recherche :<h2>";
+  echo "<form action='../Recherche/reponse_genre.php'><br>";
+  echo "Nom Genre : <input type='text' name='nom_recherche'><br>";
+  echo "<input type='submit' value='Rechercher'></form>";
+  echo "</fieldset>";
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT * FROM genres");
     echo "<ul id='liste'><br>";

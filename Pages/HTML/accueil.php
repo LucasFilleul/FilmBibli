@@ -20,6 +20,6 @@
         <a href="../Recherche/recherche.php"><li><p>Recherche</p></li></a>
     </ul>
 </nav>
-<footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
+<footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>

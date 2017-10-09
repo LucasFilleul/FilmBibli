@@ -31,7 +31,7 @@
   }
   else{
     if($_POST['P_recherche'] == "acteur"){
-      echo "<form action='reponse_acteur.php'><br>";
+      echo "<form action='../Recherche/reponse_acteur.php'><br>";
       echo "Nom Acteur : <input type='text' name='nom_recherche'><br>";
       echo "<input type='submit' value='Rechercher'></form>";
     }
@@ -47,6 +47,6 @@
     }
   }
   ?>
-  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
+  <footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>
