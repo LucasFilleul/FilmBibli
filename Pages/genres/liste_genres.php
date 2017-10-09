@@ -25,7 +25,7 @@
     $request = $file_db->query("SELECT * FROM genres");
     echo "<ul id='liste'><br>";
     foreach ($request as $c){
-      echo "<a href='../Recherche/reponse_genre.php?nom_recherche=$c[2]' ><li><br><br><h2>$c[1]</h2><br><img src = '../images/$c[2].jpg' style = 'width:50%'><br><br></li></a><br>";
+      echo "<a href='../Recherche/reponse_genre.php?nom_recherche=$c[2]' ><li><br><br><h2>$c[1]</h2><br><img src = '../images/genres/$c[2].jpg' style = 'width:50%'><br><br></li></a><br>";
     }
     echo "</ul><br>";
   ?>

@@ -24,7 +24,7 @@
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT * FROM films");
     foreach ($request as $c){
-      echo "($c[0], $c[1], $c[2], $c[3], $c[4], $c[5], $c[6], $c[7], $c[8])<br>";
+      echo "($c[0], $c[1], $c[2], $c[3], $c[4], $c[5], $c[6], $c[7])<br>";
     }
   ?>
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
