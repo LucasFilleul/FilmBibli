@@ -121,7 +121,7 @@
 
       array(44,'Lerman','Logan','Americain', 1992, 0, 'Lerman_Logan.jpg'),
       array(45,'T.Jackson','Brandon','Americain', 1984, 0, 'Brandon_T.Jackson.jpg'),
-      array(46,'Brosnan','Pierce','Irlandais', 1953, 0, 'Brandon_T.Jackson.jpg'),
+      array(46,'Brosnan','Pierce','Irlandais', 1953, 0, 'Pierce_Brosnan.jpg'),
 
       // Les Aventuriers de l'arche perdue
 
