@@ -22,12 +22,14 @@
 </nav>
   <?php
   if($_SERVER['REQUEST_METHOD'] == "GET"){
+    echo "<fieldset id='blanc'>";
     echo "<form method='POST' action='recherche.php'><br>";
-    echo "<br><h4>Quel est le type de votre recherche ?</h4>";
-    echo "<input type='radio' name='P_recherche' value='acteur'>Par Acteur";
-    echo "<input type='radio' name='P_recherche' value='genre'>Par Genre";
-    echo "<input type='radio' name='P_recherche' value='film'>Par Film";
+    echo "<br><h2 id='blanc'>Quel est le type de votre recherche ?</h2>";
+    echo "<input id='blanc' type='radio' name='P_recherche' value='acteur'>Par Acteur";
+    echo "<input id='blanc' type='radio' name='P_recherche' value='genre'>Par Genre";
+    echo "<input id='blanc' type='radio' name='P_recherche' value='film'>Par Film";
     echo "<br><br><input type='submit' value='Valider'></form>";
+    echo "</fieldset>";
   }
   else{
     if($_POST['P_recherche'] == "acteur"){
