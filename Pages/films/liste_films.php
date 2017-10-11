@@ -17,7 +17,7 @@
         <a href="../films/liste_films.php"  class="active"><li><p>Films</p></li></a>
         <a href="../acteur/liste_acteurs.php"><li><p>Acteurs</p></li></a>
         <a href="../genres/liste_genres.php"><li><p>Genres</p></li></a>
-        <a href="../Recherche/recherche.php"><li><p>Recherche</p></li></a>
+        <a href="../real/liste_real.php"><li><p>Réalisateur</p></li></a>
     </ul>
 </nav>
   <?php
@@ -39,8 +39,8 @@
     foreach ($request as $c){
       $heure = substr($c[4], -3, 1);
       $minute = substr($c[4], -2);
-      echo "<a href='../Recherche/reponse_film.php?nom_recherche=$c[1]' ><li><br><br><h2>$c[1]</h2><br><img src = '../images/films/$c[7]' style = 'width:50%'><br><br>
-      <p>Réalisateur : $c[6]</p><p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li></a><br>";
+      echo "<a href='../Recherche/reponse_film.php?nom_recherche=$c[1]' ><li><br><br><h2>$c[1]</h2><br><img src = '../images/films/$c[6]' style = 'width:50%'><br><br>
+      <p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li></a><br>";
     }
     echo "</ul><br>";
   ?>
