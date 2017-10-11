@@ -1,1 +1,5 @@
 COMMENTAIRE !!! TERCIAIRE
+
+LUCAS -> CSS, RELATIONS, REAL, réponse_real, réponse_genre
+
+Arthur -> ACTEUR, FILMS, GENRES, HTML, réponse_film, réponse_acteur
