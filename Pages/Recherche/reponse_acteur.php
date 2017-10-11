@@ -70,7 +70,7 @@ function getActeur($nom){
   $idact = selectActeur($nom_recherche);
   if($idact == ""){
     echo "<fieldset id='blanc'>";
-    echo "<h2 id='blanc'>L'acteur rentré n'est pas dans notre base de données.</h2>";
+    echo "<h2 id='blanc'>L'acteur : " . $nom_recherche . " rentré n'est pas dans notre base de données.</h2>";
     echo "<h4 id='blanc'>Retourner à la liste des réalisateur :<br>";
     echo "<form action='../acteur/liste_acteurs.php'><br>";
     echo "<input type='submit' value='Retour'></form>";

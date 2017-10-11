@@ -69,7 +69,7 @@ function getReal($nom){
   $idreal = selectReal($nom_recherche);
   if($idreal == ""){
     echo "<fieldset id='blanc'>";
-    echo "<h2 id='blanc'>Le réalisateur rentré n'est pas dans notre base de données.</h2>";
+    echo "<h2 id='blanc'>Le réalisateur : " . $nom_recherche . "rentré n'est pas dans notre base de données.</h2>";
     echo "<h4 id='blanc'>Retourner à la liste des réalisateur :<br>";
     echo "<form action='../real/liste_real.php'><br>";
     echo "<input type='submit' value='Retour'></form>";

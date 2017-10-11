@@ -97,7 +97,7 @@ function detailReal($nom)
   $id_du_film =selectFilm($nom_recherche);
   if($id_du_film == ""){
     echo "<fieldset id='blanc'>";
-    echo "<h2 id='blanc'>Le film rentré n'est pas dans notre base de données.</h2>";
+    echo "<h2 id='blanc'>Le film : " . $nom_recherche . " rentré n'est pas dans notre base de données.</h2>";
     echo "<h4 id='blanc'>Retourner à la liste des films :<br>";
     echo "<form action='../films/liste_films.php'><br>";
     echo "<input type='submit' value='Retour'></form>";

@@ -53,7 +53,7 @@
     $idGenre = selectGenre($nom_recherche);
     if($idGenre == ""){
       echo "<fieldset id='blanc'>";
-      echo "<h2 id='blanc'>Le genre rentré n'est pas dans notre base de données.</h2>";
+      echo "<h2 id='blanc'>Le genre : " . $nom_recherche . " rentré n'est pas dans notre base de données.</h2>";
       echo "<form action='../genres/liste_genres.php'><br>";
       echo "<h4 id='blanc'>Retourner à la liste des genres :<br>";
       echo "<input type='submit' value='Retour'></form>";
