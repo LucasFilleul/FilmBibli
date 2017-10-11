@@ -32,7 +32,7 @@ function detailFilm($nom){
     $heure = substr($c[4], -3, 1);
     $minute = substr($c[4], -2);
     echo "<ul id='liste'><br>";
-    echo "<li><h2>$c[1]</h2><br><img src = '../images/films/$c[7]' style = 'width:50%'><br><br>
+    echo "<li><h2>$c[1]</h2><br><img src = '../images/films/$c[6]' style = 'width:50%'><br><br>
     <p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li><br>";
     echo "</ul><br>";
     $file_db = null;
@@ -59,12 +59,13 @@ function detailActeur($nom)
   }
     $id_acteur->closeCursor();
     echo "</ul><br>";
-
 }
+
 
   $nom_recherche = $_GET['nom_recherche'];
   detailFilm($nom_recherche);
   detailActeur($nom_recherche);
+  detailReal($nom_recherche);
   ?>
 
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
