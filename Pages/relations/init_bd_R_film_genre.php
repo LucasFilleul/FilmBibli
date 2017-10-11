@@ -8,6 +8,7 @@
 <body>
   <?php
   try{
+    /* Instancie et implémente la BD */
     $file_db = new PDO('sqlite:../../../BD/base_de_donnes_FILM.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $file_db->exec("CREATE TABLE IF NOT EXISTS FILMESTDEGENRE(
@@ -15,12 +16,7 @@
       ref_code_genre INTEGER
     )");
 
-      // $lines = file('film_genre.txt');
-      // foreach ($lines as $lineContent)
-      // {
-      // 	echo "array" . $lineContent . "<br>";
-      // }
-
+    /* liste de relation Film / Genre */
     $genres_film = array(
       array(1,1),
       array(2,1),
@@ -48,7 +44,7 @@
       array(24,16),
       array(25,17)
       );
-
+      /* Prépare et effectue l'implémentation de la BD */
     $insert = "INSERT INTO FILMESTDEGENRE (ref_code_film,ref_code_genre)
     VALUES (:ref_code_film,:ref_code_genre)";
     $stmt = $file_db->prepare($insert);

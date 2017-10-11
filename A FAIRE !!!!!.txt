@@ -1,5 +1,5 @@
-COMMENTAIRE !!! TERCIAIRE
+COMMENTAIRE:
 
-LUCAS -> CSS, RELATIONS, REAL, réponse_real, réponse_genre
+Lucas -> fini 
 
 Arthur -> ACTEUR, FILMS, GENRES, HTML, réponse_film, réponse_acteur

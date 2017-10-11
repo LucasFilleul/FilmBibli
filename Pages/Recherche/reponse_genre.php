@@ -21,24 +21,26 @@
     </ul>
 </nav>
   <?php
-    // RESSORT L ID DU GENRE
+  /* fonction qui retourne l'id du genre en fonction du nom rentrée */
     function selectGenre($nomgenre){
       $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
       $request = $file_db->query("SELECT * FROM genres WHERE nom_genre='$nomgenre'");
+      // DONNE TOUTE LES INFOS DU GENRE EN FONCTION DU NOM RENTREE
       $donnees = $request->fetch();
       $idgenre = $donnees[0];
       $file_db = null;
       return $idgenre;
     }
+    /* fonction qui affiche la liste des films du genre en fonction du genre cliqué*/
     function selectfilmdugenre($id){
       $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
-        // RESSORT LA LISTE DES ID DES FILMS DU GENRE.
         $request_liste_films = $file_db->query("SELECT ref_code_film FROM FILMESTDEGENRE WHERE ref_code_genre='$id'");
-        // RESSORT LE FILM
+        // DONNE TOUS LES FILMS DU GENRE EN FONCTION DU CODE DU GENRE
         echo "<ul id='liste'><br>";
         foreach ($request_liste_films as $idfilm)
         {
         $request_films = $file_db->query("SELECT * FROM films WHERE code_film ='$idfilm[0]'");
+        // DONNE TOUTES LES INFOS DU FILM
         foreach ($request_films as $c){
           $heure = substr($c[4], -3, 1);
           $minute = substr($c[4], -2);
@@ -52,6 +54,7 @@
     $nom_recherche = $_GET['nom_recherche'];
     $idGenre = selectGenre($nom_recherche);
     if($idGenre == ""){
+      /* Le nom rentré n'existe pas dans la base ou est mal écrit */
       echo "<fieldset id='blanc'>";
       echo "<h2 id='blanc'>Le genre : " . $nom_recherche . ", n'est pas dans notre base de données.</h2>";
       echo "<form action='../genres/liste_genres.php'><br>";

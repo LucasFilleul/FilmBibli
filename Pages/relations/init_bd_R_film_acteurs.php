@@ -8,19 +8,15 @@
 <body>
   <?php
   try{
+    /* Instancie et implémente la BD */
     $file_db = new PDO('sqlite:../../../BD/base_de_donnes_FILM.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $file_db->exec("CREATE TABLE IF NOT EXISTS ACTEURDANSFILM(
       ref_code_film INTEGER,
       ref_code_acteur INTEGER
     )");
-      //
-      // $lines = file('film_acteur.txt');
-      // foreach ($lines as $lineContent)
-      // {
-      // 	echo "array" . $lineContent . "<br>";
-      // }
 
+    /* liste de relation Film / Acteur */
     $acteur_film = array(
       array(1, 1),
       array(1, 2),
@@ -85,7 +81,7 @@
       array(24, 60),
       array(25, 61),
       );
-
+      /* Prépare et effectue l'implémentation de la BD */
     $insert = "INSERT INTO ACTEURDANSFILM (ref_code_film,ref_code_acteur)
     VALUES (:ref_code_film,:ref_code_acteur)";
     $stmt = $file_db->prepare($insert);

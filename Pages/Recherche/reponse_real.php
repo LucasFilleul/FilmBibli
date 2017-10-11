@@ -21,18 +21,21 @@
     </ul>
 </nav>
   <?php
+  /* fonction qui retourne l'id du realisateur en fonction du nom rentrée */
   function selectReal($nomreal){
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT code_real FROM realisateur WHERE nom='$nomreal'");
+    // DONNE L ID DU REALISATEUR EN FONCTION DU NOM RENTREE
     $donnees = $request->fetch();
     $idreal = $donnees[0];
     $file_db = null;
     return $idreal;
   }
-
+/* fonction qui affiche la liste des realisateur en fonction du nom rentré*/
 function getReal($nom){
   $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
   $request = $file_db->query("SELECT * FROM realisateur WHERE nom = '$nom'");
+  // DONNE TOUTE LES INFOS DU REALISATEUR EN FONCTION DU NOM RENTREE
   echo "<ul id='liste'><br>";
   foreach ($request as $c){
     echo "<a href='../Recherche/reponse_real.php?nom_recherche=$c[0]' ><li><br><br><h2>$c[2] $c[1]</h2><br><img src = '../images/real/$c[6]' style = 'width:50%'><br><br></li></a><br>";
@@ -41,18 +44,19 @@ function getReal($nom){
     $file_db = null;
 }
 
-
+/* fonction qui affiche la liste des films du realisateur en fonction du réalisateur cliqué*/
   function getfilm($id){
-    // RESSORT L ID DU GENRE
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     if($id == ""){
       echo "Le réalisateur rentré n'est pas dans notre base de données.<br><br>";
     }
     else{
       $request_liste_id_acteurs = $file_db->query("SELECT ref_code_film FROM FILMESTDE WHERE ref_code_real='$id'");
+      // DONNE TOUS LES FILMS DU REALISATEUR EN FONCTION DU CODE DU REALISATEUR
       echo "<ul id='liste'><br>";
       foreach ($request_liste_id_acteurs as $idfilm){
         $request_films = $file_db->query("SELECT * FROM films WHERE code_film ='$idfilm[0]'");
+        // DONNE TOUTES LES INFOS DU FILM
         foreach ($request_films as $c){
           $heure = substr($c[4], -3, 1);
           $minute = substr($c[4], -2);
@@ -68,6 +72,7 @@ function getReal($nom){
   $nom_recherche = $_GET['nom_recherche'];
   $idreal = selectReal($nom_recherche);
   if($idreal == ""){
+    /* Le nom rentré n'existe pas dans la base ou est mal écrit */
     echo "<fieldset id='blanc'>";
     echo "<h2 id='blanc'>Le réalisateur : " . $nom_recherche . ", n'est pas dans notre base de données.</h2>";
     echo "<h4 id='blanc'>Retourner à la liste des réalisateur :<br>";
@@ -77,9 +82,11 @@ function getReal($nom){
     echo "<footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
   }
   else{
+    /* Si l'utilisateur rentre un nom dans la recherche */
     if(is_string($nom_recherche)){
       getReal($nom_recherche);
     }
+    /* Si l'utilisateur clique sur un réalisateur */
     if(in_array($nom_recherche[0], array("1","2","3","4","5","6","7","8","9","0"))){
       getfilm($nom_recherche);
     }

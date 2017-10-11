@@ -8,6 +8,7 @@
 <body>
   <?php
   try{
+    /* Instancie et implémente la BD */
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $file_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     $file_db->exec("CREATE TABLE IF NOT EXISTS realisateur(
@@ -19,12 +20,7 @@
       date_mort INTEGER,
       image TEXT)");
 
-      // $lines = file('act.txt');
-      // foreach ($lines as $lineContent)
-      // {
-      // 	echo "array" . $lineContent . "<br>";
-      // }
-
+      /* liste de Realisateur */
     $acteurs = array(
       array(1,'De Chauveron','Philippe','FR', 1965 , 0, 'Philippe_de_Chauveron.JPG'),
       array(2,'Russell','Chuck','USA', 1958, 0, 'Chuck_russel.jpg'),
@@ -53,7 +49,7 @@
       array(25,'Stevens','Art','USA', 1915, 2007, 'Art_Stevens.jpg'),
       );
 
-
+      /* Prépare et effectue l'implémentation de la BD */
     $insert = "INSERT INTO realisateur (code_real, nom, prenom, nationalite, date_naiss, date_mort,image)
     VALUES (:code_real,:nom,:prenom,:nationalite,:date_naiss, :date_mort, :image)";
     $stmt = $file_db->prepare($insert);

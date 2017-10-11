@@ -21,14 +21,17 @@
     </ul>
 </nav>
   <?php
+  /* Affiche le formulaire de recherche */
     echo "<fieldset id='blanc'>";
     echo "<h2 id='blanc'>Recherche :</h2>";
     echo "<form action='../Recherche/reponse_real.php'><br>";
     echo "Nom Réalisateur : <input type='text' name='nom_recherche'> Exemple( 'Berman' )<br>";
     echo "<input type='submit' value='Rechercher'></form>";
     echo "</fieldset>";
+    /* Instancie un lien vers la BD et récupere les infos*/
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT * FROM realisateur ORDER BY nom");
+    // DONNE LA LISTE DES REALISATEUR RANGEE PAR NOM
     echo "<ul id='liste'><br>";
     foreach ($request as $c){
       echo "<a href='../Recherche/reponse_real.php?nom_recherche=$c[0]' ><li><br><br><h2>$c[2] $c[1]</h2><br><img src = '../images/real/$c[6]' style = 'width:50%'><br><br></li></a><br>";
