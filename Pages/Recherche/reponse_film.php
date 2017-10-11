@@ -53,19 +53,41 @@ function detailActeur($nom)
     $films = $file_db_acteurs_du_film->query("SELECT * FROM films WHERE code_film ='$donnee[0]'"); // sortie toute les infos sur le film.
 
     $id_acteur = $file_db_acteurs_du_film ->query("SELECT * FROM ACTEURDANSFILM NATURAL JOIN acteurs WHERE ref_code_film ='$donnee[0]' and ref_code_acteur=code_indiv"); // sort les id des acteurs en fonction de l'id du film au dessus.
+
+    echo "<fieldset id = 'blanc'> ";
+    echo "<h3 id='centrer'> -------------------------- ACTEUR(S) --------------------------</h3>";
     echo "<ul id='liste'><br>";
     while($donnee2 = $id_acteur->fetch()){
       echo "<li><a href='../Recherche/reponse_acteur.php?nom_recherche=" . $donnee2['nom'] . "' ><br><br><h2> " . $donnee2['prenom'] ." ".$donnee2['nom']."</h2><br><img src = '../images/acteurs/" . $donnee2['image'] ." ' style = 'width:50%'><br><br></li></a><br>";
   }
     $id_acteur->closeCursor();
     echo "</ul><br>";
+    echo "</fieldset> ";
 }
 
+function detailReal($nom)
+  {
+    $file_db_real_du_film = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
+
+    $id_film = $file_db_real_du_film->query("SELECT code_film FROM films WHERE titre='$nom'"); //---> sortie The mask : [2]
+
+    $donnee = $id_film->fetch();
+    echo "<fieldset id = 'blanc'> ";
+    echo "<h3 id='centrer'> -------------------------- REALISATEUR(S) --------------------------</h3>";
+    $id_real = $file_db_real_du_film->query("SELECT * FROM FILMESTDE NATURAL JOIN realisateur WHERE ref_code_film ='$donnee[0]' and ref_code_real=code_real");
+    echo "<ul id='liste'><br>";
+    while($donnee2 = $id_real->fetch()){
+      echo "<li><a href='../Recherche/reponse_acteur.php?nom_recherche=" . $donnee2['nom'] . "' ><br><br><h2> " . $donnee2['prenom'] ." ".$donnee2['nom']."</h2><br><img src = '../images/real/" . $donnee2['image'] ." ' style = 'width:50%'><br><br></li></a><br>";
+  }
+  $id_real->closeCursor();
+  echo "</ul><br>";
+  echo "</fieldset> ";
+}
 
   $nom_recherche = $_GET['nom_recherche'];
   detailFilm($nom_recherche);
-  detailActeur($nom_recherche);
   detailReal($nom_recherche);
+  detailActeur($nom_recherche);
   ?>
 
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>

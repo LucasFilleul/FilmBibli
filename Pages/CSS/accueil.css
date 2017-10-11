@@ -9,6 +9,7 @@ header{
 }
 html{
   background-color: #403075;
+  border:collapse;
 }
 a{
   color: black;
@@ -115,4 +116,7 @@ footer {
 }
 #blanc{
   color:white;
+}
+#centrer{
+  text-align: center;
 }
