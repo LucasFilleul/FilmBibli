@@ -33,7 +33,7 @@ function detailFilm($nom){
     $minute = substr($c[4], -2);
     echo "<ul id='liste'><br>";
     echo "<li><h2>$c[1]</h2><br><img src = '../images/films/$c[7]' style = 'width:50%'><br><br>
-    <p>Réalisateur : $c[6]</p><p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li><br>";
+    <p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li><br>";
     echo "</ul><br>";
     $file_db = null;
   }
@@ -44,18 +44,22 @@ function detailActeur($nom)
 
     $file_db_acteurs_du_film = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
 
-    $id_film = $file_db_acteurs_du_film->query("SELECT code_film FROM films WHERE titre='$nom'");
+    $id_film = $file_db_acteurs_du_film->query("SELECT code_film FROM films WHERE titre='$nom'"); //---> sortie The mask : [2]
 
-    $id_acteur = $file_db_acteurs_du_film ->query("SELECT ref_code_acteur FROM ACTEURDANSFILM WHERE ref_code_film ='$id_film'");
+    $donnee = $id_film->fetch();
 
+    //echo $donnee[0];
 
+    $films = $file_db_acteurs_du_film->query("SELECT * FROM films WHERE code_film ='$donnee[0]'"); // sortie toute les infos sur le film.
+
+    $id_acteur = $file_db_acteurs_du_film ->query("SELECT * FROM ACTEURDANSFILM NATURAL JOIN acteurs WHERE ref_code_film ='$donnee[0]' and ref_code_acteur=code_indiv"); // sort les id des acteurs en fonction de l'id du film au dessus.
     echo "<ul id='liste'><br>";
+    while($donnee2 = $id_acteur->fetch()){
+      echo "<li><a href='../Recherche/reponse_acteur.php?nom_recherche=" . $donnee2['nom'] . "' ><br><br><h2> " . $donnee2['prenom'] ." ".$donnee2['nom']."</h2><br><img src = '../images/acteurs/" . $donnee2['image'] ." ' style = 'width:50%'><br><br></li></a><br>";
+  }
+    $id_acteur->closeCursor();
+    echo "</ul><br>";
 
-    foreach ($id_acteur as $act){
-      $acteur = $file_db_acteurs_du_film-> query("SELECT * FROM acteurs WHERE code_indiv ='$act'");
-      echo "<a href='../Recherche/reponse_acteur.php?nom_recherche=$act[1]' ><li><br><br><h2>$act[2] $act[1]</h2><br><img src = '../images/acteurs/$act[6]' style = 'width:50%'><br><br></li></a><br>";
-    }
-      echo "</ul><br>";
 }
 
   $nom_recherche = $_GET['nom_recherche'];
