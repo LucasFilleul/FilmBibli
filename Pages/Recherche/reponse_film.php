@@ -21,7 +21,14 @@
     </ul>
 </nav>
   <?php
-
+  function selectFilm($nomgenre){
+    $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
+    $request = $file_db->query("SELECT code_film FROM films WHERE titre='$nomgenre'");
+    $donnees = $request->fetch();
+    $idfilm = $donnees[0];
+    $file_db = null;
+    return $idfilm;
+  }
 
 function detailFilm($nom){
     // METTRE LES CARACTERISTIQUES DES FILMS
@@ -63,6 +70,7 @@ function detailActeur($nom)
     $id_acteur->closeCursor();
     echo "</ul><br>";
     echo "</fieldset> ";
+    $file_db_acteurs_du_film = null;
 }
 
 function detailReal($nom)
@@ -82,14 +90,27 @@ function detailReal($nom)
   $id_real->closeCursor();
   echo "</ul><br>";
   echo "</fieldset> ";
+  $file_db_real_du_film = null;
 }
 
   $nom_recherche = $_GET['nom_recherche'];
-  detailFilm($nom_recherche);
-  detailReal($nom_recherche);
-  detailActeur($nom_recherche);
+  $id_du_film =selectFilm($nom_recherche);
+  if($id_du_film == ""){
+    echo "<fieldset id='blanc'>";
+    echo "<h2 id='blanc'>Le film rentré n'est pas dans notre base de données.</h2>";
+    echo "<h4 id='blanc'>Retourner à la liste des films :<br>";
+    echo "<form action='../films/liste_films.php'><br>";
+    echo "<input type='submit' value='Retour'></form>";
+    echo "</fieldset>";
+    echo "<footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
+  }
+  else{
+    detailFilm($nom_recherche);
+    detailReal($nom_recherche);
+    detailActeur($nom_recherche);
+    echo "<footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
+  }
   ?>
 
-  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>

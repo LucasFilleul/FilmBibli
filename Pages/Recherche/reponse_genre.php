@@ -32,11 +32,6 @@
     }
     function selectfilmdugenre($id){
       $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
-      if($id == ""){
-        echo "Le genre rentré n'est pas dans notre base de données.<br><br>";
-      }
-      else
-      {
         // RESSORT LA LISTE DES ID DES FILMS DU GENRE.
         $request_liste_films = $file_db->query("SELECT ref_code_film FROM FILMESTDEGENRE WHERE ref_code_genre='$id'");
         // RESSORT LE FILM
@@ -52,13 +47,23 @@
         }
         }
         echo "</ul><br>";
-      }
       $file_db = null;
     }
     $nom_recherche = $_GET['nom_recherche'];
     $idGenre = selectGenre($nom_recherche);
-    selectfilmdugenre($idGenre);
+    if($idGenre == ""){
+      echo "<fieldset id='blanc'>";
+      echo "<h2 id='blanc'>Le genre rentré n'est pas dans notre base de données.</h2>";
+      echo "<form action='../genres/liste_genres.php'><br>";
+      echo "<h4 id='blanc'>Retourner à la liste des genres :<br>";
+      echo "<input type='submit' value='Retour'></form>";
+      echo "</fieldset>";
+      echo "<footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
+    }
+    else{
+      selectfilmdugenre($idGenre);
+      echo "<footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
+    }
   ?>
-  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>

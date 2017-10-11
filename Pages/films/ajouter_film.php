@@ -54,6 +54,7 @@
         echo "<input type='submit' value='Retour'></form>";
         echo "</fieldset>";
       }
+      $file_db = null;
     }
     if($_SERVER['REQUEST_METHOD'] == "GET"){
       echo "<fieldset id='blanc'>";

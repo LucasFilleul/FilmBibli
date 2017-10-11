@@ -43,6 +43,7 @@
       <p>Pays : $c[2]</p><p>Date : $c[3]</p><p>Durée : $heure h $minute</p></li></a><br>";
     }
     echo "</ul><br>";
+    $file_db = null;
   ?>
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>

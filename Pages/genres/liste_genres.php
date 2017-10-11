@@ -34,6 +34,7 @@
       echo "<a href='../Recherche/reponse_genre.php?nom_recherche=$c[1]' ><li><br><br><h2>$c[1]</h2><br><img src = '../images/genres/$c[2].jpg' style = 'width:50%'><br><br></li></a><br>";
     }
     echo "</ul><br>";
+    $file_db = null;
   ?>
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>

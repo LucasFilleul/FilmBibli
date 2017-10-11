@@ -21,6 +21,15 @@
     </ul>
 </nav>
   <?php
+  function selectReal($nomreal){
+    $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
+    $request = $file_db->query("SELECT code_real FROM realisateur WHERE nom='$nomreal'");
+    $donnees = $request->fetch();
+    $idreal = $donnees[0];
+    $file_db = null;
+    return $idreal;
+  }
+
 function getReal($nom){
   $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
   $request = $file_db->query("SELECT * FROM realisateur WHERE nom = '$nom'");
@@ -29,6 +38,7 @@ function getReal($nom){
     echo "<a href='../Recherche/reponse_real.php?nom_recherche=$c[0]' ><li><br><br><h2>$c[2] $c[1]</h2><br><img src = '../images/real/$c[6]' style = 'width:50%'><br><br></li></a><br>";
   }
     echo "</ul><br>";
+    $file_db = null;
 }
 
 
@@ -52,16 +62,29 @@ function getReal($nom){
       }
       echo "</ul><br>";
     }
+    $file_db = null;
   }
 
   $nom_recherche = $_GET['nom_recherche'];
-  if(is_string($nom_recherche)){
-    getReal($nom_recherche);
+  $idreal = selectReal($nom_recherche);
+  if($idreal == ""){
+    echo "<fieldset id='blanc'>";
+    echo "<h2 id='blanc'>Le réalisateur rentré n'est pas dans notre base de données.</h2>";
+    echo "<h4 id='blanc'>Retourner à la liste des réalisateur :<br>";
+    echo "<form action='../real/liste_real.php'><br>";
+    echo "<input type='submit' value='Retour'></form>";
+    echo "</fieldset>";
+    echo "<footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
   }
-  if(in_array($nom_recherche[0], array("1","2","3","4","5","6","7","8","9","0"))){
-    getfilm($nom_recherche);
+  else{
+    if(is_string($nom_recherche)){
+      getReal($nom_recherche);
+    }
+    if(in_array($nom_recherche[0], array("1","2","3","4","5","6","7","8","9","0"))){
+      getfilm($nom_recherche);
+    }
+    echo "<footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>";
   }
   ?>
-  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>

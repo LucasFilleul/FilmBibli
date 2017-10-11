@@ -34,6 +34,7 @@
       echo "<a href='../Recherche/reponse_acteur.php?nom_recherche=$c[0]' ><li><br><br><h2>$c[2] $c[1]</h2><br><img src = '../images/acteurs/$c[6]' style = 'width:50%'><br><br></li></a><br>";
     }
       echo "</ul><br>";
+      $file_db = null;
   ?>
   <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
