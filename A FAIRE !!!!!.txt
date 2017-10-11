@@ -3,3 +3,5 @@ COMMENTAIRE:
 Lucas -> fini 
 
 Arthur -> ACTEUR, FILMS, GENRES, HTML, réponse_film, réponse_acteur
+
+ARTHUR FAIT LE TEXTE DE LA PAGE D ACCUEIL STP <3
