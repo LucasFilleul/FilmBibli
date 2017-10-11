@@ -26,30 +26,51 @@
       $file_db = new PDO('sqlite:../../../BD/base_de_donnes_FILM.sqlite');
       $requete_code = $file_db->query("SELECT max(code_film) FROM films");
       $donnees = $requete_code->fetch();
-      $insert = "INSERT INTO films (code_film,titre_original,titre_francais,pays,date, duree,couleur, realisateur, image)
-      VALUES (:code_film,:titre_original,:titre_francais,:pays,:date, :duree,:couleur, :realisateur, :image)";
-      if($_GET["titreO"] == "" || $_GET["titreFR"] == "" || $_GET["pays"] == ""
-      || $_GET["date"] == "" || $_GET["duree"] == "" || $_GET["couleur"] == ""
-      || $_GET["realisateur"] == ""){
-        echo "Le film n'a pas été ajouté !<br> Les informations doivent etre éronées.";
-        echo "<form action='../HTML/accueil.php'><br>";
+      $insert = "INSERT INTO films (code_film,titre,pays,date, duree,couleur, realisateur, image)
+      VALUES (:code_film,:titre,:pays,:date, :duree,:couleur, :realisateur, :image)";
+      if($_POST["titre"] == "" || $_POST["pays"] == ""
+      || $_POST["date"] == "" || $_POST["duree"] == "" || $_POST["couleur"] == ""
+      || $_POST["realisateur"] == ""){
+        echo "<fieldset id='blanc'>";
+        echo "<h4 id='blanc'>Le film n'a pas été ajouté !<br> Les informations doivent etre éronées.";
+        echo "<form action='../films/ajouter_film.php'><br>";
         echo "<input type='submit' value='Retour'></form>";
+        echo "</fieldset>";
       }
       else{
         $stmt = $file_db->prepare($insert);
         $stmt->bindValue(':code_film', $donnees[0] + 1);
-        $stmt->bindParam(':titre_original', $_GET["titreO"]);
-        $stmt->bindParam(':titre_francais', $_GET["titreFR"]);
-        $stmt->bindParam(':pays', $_GET["pays"]);
-        $stmt->bindParam(':date', $_GET["date"]);
-        $stmt->bindParam(':duree', $_GET["duree"]);
-        $stmt->bindParam(':couleur', $_GET["couleur"]);
-        $stmt->bindParam(':realisateur', $_GET["realisateur"]);
-        $stmt->bindValue(':image', "NB");
+        $stmt->bindParam(':titre', $_POST["titre"]);
+        $stmt->bindParam(':pays', $_POST["pays"]);
+        $stmt->bindParam(':date', $_POST["date"]);
+        $stmt->bindParam(':duree', $_POST["duree"]);
+        $stmt->bindParam(':couleur', $_POST["couleur"]);
+        $stmt->bindParam(':realisateur', $_POST["realisateur"]);
+        $stmt->bindValue(':image', "NB.jpg");
         $stmt->execute();
+        echo "<fieldset id='blanc'>";
+        echo "<h4 id='blanc'>Le film a bien été ajouté !<br>";
+        echo "<form action='liste_films.php'><br>";
+        echo "<input type='submit' value='Retour'></form>";
+        echo "</fieldset>";
       }
     }
-    ajouter_un_film();
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+      echo "<fieldset id='blanc'>";
+      echo "<form method='POST' action='ajouter_film.php'><br>";
+      echo "<br><h2 id='blanc'>Quel est le film que vous voulez ajouter ?</h2><br><br>";
+      echo "Titre du film  : <input type='text' name='titre' required placeholder='Titanic'><br><br>";
+      echo "Pays d'origine : <input type='text' name='pays' required placeholder='USA / FR'><br><br>";
+      echo "Date de sortie : <input type='text' name='date' required placeholder='2001'><br><br>";
+      echo "Durée du film  : <input type='text' name='duree' required placeholder='155 (1h55min)'><br><br>";
+      echo "Couleur        : <input type='text' name='couleur' required placeholder='NB (Noir et Blanc) / Couleur'><br><br>";
+      echo "Réalisateur    : <input type='text' name='realisateur' required placeholder='Stanley Kubrick'><br><br>";
+      echo "<input type='submit' value='Valider'></form>";
+      echo "</fieldset>";
+    }
+    else{
+      ajouter_un_film();
+    }
   }
   catch(PDOException $e){
     echo $e->getMessage();

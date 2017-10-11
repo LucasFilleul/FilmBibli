@@ -24,26 +24,43 @@
   try{
     function suuprimer_un_film(){
       $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
-      $recherche = $_GET['titreOS'];
-      if($recherche == ""){
-        echo "Le film n'a pas été supprimé !<br> Le nom ne doit pas etre dans notre liste.";
+      $recherche = $_POST['titre'];
+      $requete_code = $file_db->query("SELECT * FROM films WHERE titre = '$recherche'");
+      $donnees = $requete_code->fetch();
+      if($donnees == ""){
+        echo "<fieldset id='blanc'>";
+        echo "<h4 id='blanc'>Le film n'a pas été supprimé !</h4><p id='blanc'>Le nom ne doit pas etre dans notre liste.</p>";
         echo "<form action='../HTML/accueil.php'><br>";
         echo "<input type='submit' value='Retour'></form>";
+        echo "</fieldset>";
       }
       else{
-        $requete_code = $file_db->query("SELECT * FROM films WHERE titre_original = '$recherche'");
-        $donnees = $requete_code->fetch();
         $delete = "DELETE FROM films WHERE titre_original = '$recherche'";
         $stmt = $file_db->prepare($delete);
         $stmt->execute();
+        echo "<fieldset id='blanc'>";
+        echo "<h4 id='blanc'>Le film a bien été supprimé !<br>";
+        echo "<form action='liste_films.php'><br>";
+        echo "<input type='submit' value='Retour'></form>";
+        echo "</fieldset>";
       }
     }
-    suuprimer_un_film();
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+      echo "<fieldset id='blanc'>";
+      echo "<form method='POST' action='supprimer_film.php'><br>";
+      echo "<br><h2 id='blanc'>Quel est le film que vous voulez ajouter ?</h2><br><br>";
+      echo "Titre du film  : <input type='text' name='titre' required placeholder='Titanic'><br><br>";
+      echo "<br><br><input type='submit' value='Valider'></form>";
+      echo "</fieldset>";
+    }
+    else{
+      suuprimer_un_film();
+    }
   }
   catch(PDOException $e){
     echo $e->getMessage();
   }
   ?>
-  <footer><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
+  <footer id='fixefooter'><fieldset> © Copyright Fauvin - Filleul IUT - Informatique Orléans</fieldset></footer>
 </body>
 </html>

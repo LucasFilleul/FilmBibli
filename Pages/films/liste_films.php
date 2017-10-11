@@ -21,11 +21,17 @@
     </ul>
 </nav>
   <?php
-  echo "<fieldset>";
-  echo "<h2>Recherche :<h2>";
+  echo "<fieldset id='blanc'>";
+  echo "<h2 id='blanc'>Recherche :</h2>";
   echo "<form action='../Recherche/reponse_film.php'><br>";
-  echo "Nom Film : <input type='text' name='nom_recherche'><br>";
+  echo "Nom Film : <input type='text' name='nom_recherche'> Exemple ( 'The Mask' )<br>";
   echo "<input type='submit' value='Rechercher'></form>";
+  echo "</fieldset>";
+  echo "<fieldset id='blanc'>";
+  echo "<a href='../films/ajouter_film.php' id='blanc'><h2>Vous voulez ajouter votre film ?</h2>";
+  echo "<h4>--> AJOUTER UN FILM <--</h4></a>";
+  echo "<a href='../films/supprimer_film.php' id='blanc'><h2>Vous voulez supprimer un film ?</h2>";
+  echo "<h4>--> SUPPRIMER UN FILM <--</h4></a>";
   echo "</fieldset>";
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
     $request = $file_db->query("SELECT * FROM films");
