@@ -24,11 +24,15 @@
 
   function selectActeur($nomact){
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
-    $request = $file_db->query("SELECT code_indiv FROM acteurs WHERE nom='$nomact'");
-    $donnees = $request->fetch();
-    $idact = $donnees[0];
+    if(in_array($nomact[0], array("1","2","3","4","5","6","7","8","9","0"))){
+      $request = $file_db->query("SELECT code_indiv FROM acteurs WHERE code_indiv='$nomact'");
+    }
+    /* Si l'utilisateur clique sur un acteur */
+    else{
+      $request = $file_db->query("SELECT code_indiv FROM acteurs WHERE nom='$nomact'");
+    }
     $file_db = null;
-    return $idact;
+    return $request;
   }
 
 function getActeur($nom){

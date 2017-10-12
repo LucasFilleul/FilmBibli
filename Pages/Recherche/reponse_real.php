@@ -24,12 +24,15 @@
   /* fonction qui retourne l'id du realisateur en fonction du nom rentrée */
   function selectReal($nomreal){
     $file_db = new PDO("sqlite:../../../BD/base_de_donnes_FILM.sqlite");
-    $request = $file_db->query("SELECT code_real FROM realisateur WHERE nom='$nomreal'");
-    // DONNE L ID DU REALISATEUR EN FONCTION DU NOM RENTREE
-    $donnees = $request->fetch();
-    $idreal = $donnees[0];
+    if(in_array($nomreal[0], array("1","2","3","4","5","6","7","8","9","0"))){
+      $request = $file_db->query("SELECT code_real FROM realisateur WHERE code_real='$nomreal'");
+    }
+    /* Si l'utilisateur clique sur un réalisateur */
+    else{
+      $request = $file_db->query("SELECT code_real FROM realisateur WHERE nom='$nomreal'");
+    }
     $file_db = null;
-    return $idreal;
+    return $request;
   }
 /* fonction qui affiche la liste des realisateur en fonction du nom rentré*/
 function getReal($nom){
