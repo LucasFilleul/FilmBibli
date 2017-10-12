@@ -35,7 +35,7 @@
         echo "</fieldset>";
       }
       else{
-        $delete = "DELETE FROM films WHERE titre_original = '$recherche'";
+        $delete = "DELETE FROM films WHERE titre = '$recherche'";
         $stmt = $file_db->prepare($delete);
         $stmt->execute();
         echo "<fieldset id='blanc'>";
